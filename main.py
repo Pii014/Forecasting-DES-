@@ -287,7 +287,7 @@ else:
         - **Year**: Tahun data
         - **gini_disps**: Gini Coefficient (disposable income)
         
-        Metode **Double Exponential Smoothing (Holt's Method)** cocok untuk data dengan trend linier.
+        Metode **Double Exponential Smoothing** cocok untuk data dengan trend linier.
         """)
     with col2:
         st.markdown("""
@@ -299,4 +299,5 @@ else:
         5. Lihat tabel dan metrik untuk analisis detail
 
         """)
+
 
