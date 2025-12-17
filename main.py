@@ -63,7 +63,7 @@ df_raw = load_data()
 
 # ====================== TITLE & HEADER ======================
 st.markdown("# Income Inequality in South Africa - Gini Forecast")
-st.markdown("*Forecasting Gini Coefficient menggunakan Double Exponential Smoothing (Holt's Method)*")
+st.markdown("*Forecasting Gini Coefficient menggunakan Double Exponential Smoothing*")
 
 # ====================== DATA DISPLAY ======================
 st.subheader("Data Lengkap - Income Inequality South Africa")
@@ -299,3 +299,4 @@ else:
         5. Lihat tabel dan metrik untuk analisis detail
 
         """)
+
