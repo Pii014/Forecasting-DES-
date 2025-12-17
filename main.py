@@ -62,11 +62,11 @@ def load_data():
 df_raw = load_data()
 
 # ====================== TITLE & HEADER ======================
-st.markdown("# 📊 Income Inequality in South Africa - Gini Forecast")
+st.markdown("# Income Inequality in South Africa - Gini Forecast")
 st.markdown("*Forecasting Gini Coefficient menggunakan Double Exponential Smoothing (Holt's Method)*")
 
 # ====================== DATA DISPLAY ======================
-st.subheader("📋 Data Lengkap - Income Inequality South Africa")
+st.subheader("Data Lengkap - Income Inequality South Africa")
 df_display = df_raw[['Year', 'gini_disp']].copy()
 st.dataframe(df_display, use_container_width=True, hide_index=True)
 
@@ -74,7 +74,7 @@ st.markdown("---")
 
 # ====================== SIDEBAR INPUT ======================
 with st.sidebar:
-    st.header("📊 Parameter & Pengaturan")
+    st.header("Parameter & Pengaturan")
     
     st.markdown("---")
 
@@ -86,10 +86,10 @@ with st.sidebar:
     st.markdown("---")
     col_btn1, col_btn2 = st.columns(2)
     with col_btn1:
-        if st.button("🔥 Hitung Forecast", type="primary", use_container_width=True):
+        if st.button("Hitung Forecast", type="primary", use_container_width=True):
             st.session_state.calculate = True
     with col_btn2:
-        if st.button("🗑️ Reset", use_container_width=True):
+        if st.button("Reset", use_container_width=True):
             st.session_state.calculate = False
             st.rerun()
 
@@ -183,7 +183,7 @@ if st.session_state.get("calculate", False):
         st.dataframe(pd.DataFrame(table_data), use_container_width=True)
 
         # Prediksi Mendatang
-        st.subheader(f"🔮 Prediksi {periods_ahead} Tahun ke Depan")
+        st.subheader(f"Prediksi {periods_ahead} Tahun ke Depan")
         pred_df = pd.DataFrame({
             "No": range(1, periods_ahead + 1),
             "Tahun": future_years,
@@ -192,7 +192,7 @@ if st.session_state.get("calculate", False):
         st.dataframe(pred_df, use_container_width=True, hide_index=True)
 
         # Metrik Evaluasi
-        st.subheader("📊 Metrik Evaluasi Model")
+        st.subheader("Metrik Evaluasi Model")
         cols = st.columns(4)
         with cols[0]:
             st.markdown(f"<div class='metric-card'><h3>{MAE:.4f}</h3><p>MAE</p><small>Mean Absolute Error</small></div>", unsafe_allow_html=True)
@@ -241,7 +241,7 @@ if st.session_state.get("calculate", False):
         with col1:
             st.markdown("""
             <div class='info-card'>
-                <h5>📊 Gini Coefficient</h5>
+                <h5>Gini Coefficient</h5>
                 <p><strong>Gini Coefficient</strong> adalah ukuran ketimpangan pendapatan. Semakin tinggi nilainya, semakin besar ketimpangan di suatu negara.</p>
                 <p><small>Range: 0 (sempurna merata) hingga 1 (sempurna tidak merata)</small></p>
             </div>
@@ -250,7 +250,7 @@ if st.session_state.get("calculate", False):
         with col2:
             st.markdown("""
             <div class='info-card'>
-                <h5>🎛️ Pemilihan Alpha (α)</h5>
+                <h5>Pemilihan Alpha (α)</h5>
                 <p>
                 <strong>α → 0:</strong> Smoothing lambat, lebih stabil<br>
                 <strong>α → 1:</strong> Sangat responsif terhadap data baru<br><br>
@@ -262,7 +262,7 @@ if st.session_state.get("calculate", False):
         with col3:
             st.markdown("""
             <div class='info-card'>
-                <h5>📊 Interpretasi MAPE</h5>
+                <h5>Interpretasi MAPE</h5>
                 <p>
                 <span style='background:#00E396;color:black;padding:4px 8px;border-radius:6px;font-size:0.9em;'><5%</span> → Sangat Baik<br>
                 <span style='background:#00D1FF;color:black;padding:4px 8px;border-radius:6px;font-size:0.9em;'>5-10%</span> → Baik<br>
@@ -282,7 +282,7 @@ else:
     col1, col2 = st.columns(2)
     with col1:
         st.markdown("""
-        ### 📊 Tentang Dataset
+        ### Tentang Dataset
         Dataset berisi data **Income Inequality in South Africa** dengan kolom:
         - **Year**: Tahun data
         - **gini_disps**: Gini Coefficient (disposable income)
@@ -291,10 +291,11 @@ else:
         """)
     with col2:
         st.markdown("""
-        ### 🎯 Cara Menggunakan
+        ### Cara Menggunakan
         1. Gunakan slider **Alpha (α)** untuk mengatur sensitivitas
         2. Pilih berapa tahun prediksi ke depan
         3. Klik **Hitung Forecast** untuk melihat hasil
         4. Gunakan kontrol grafik untuk menyesuaikan tampilan
         5. Lihat tabel dan metrik untuk analisis detail
+
         """)
